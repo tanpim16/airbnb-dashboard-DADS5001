@@ -129,20 +129,35 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
 
-/* ── Sidebar collapse button: hide long text, show arrow ── */
+/* ── Sidebar collapse button: hide ligature text, show › arrow ── */
 [data-testid="collapsedControl"] {{
-    font-size: 0 !important;
-    min-height: 44px !important;
-    min-width: 28px !important;
-    background: rgba(254,89,95,0.07) !important;
-    border: 1px solid rgba(254,89,95,0.2) !important;
-    border-radius: 0 8px 8px 0 !important;
+    position: relative !important;
+    overflow: visible !important;
+}}
+[data-testid="collapsedControl"] > * {{
+    visibility: hidden !important;
 }}
 [data-testid="collapsedControl"]::after {{
     content: "›" !important;
-    font-size: 1.4rem !important;
+    visibility: visible !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 1.5rem !important;
+    font-family: Arial, sans-serif !important;
     color: {C_PRIMARY} !important;
-    line-height: 1 !important;
+}}
+
+/* ── Hide contrast_mode / dark_mode text in toolbar buttons ── */
+[data-testid="stToolbarActions"] button span {{
+    visibility: hidden !important;
+}}
+/* ── Hide System/Light/Dark theme radio picker ── */
+[data-testid="stToolbarActions"] [role="radiogroup"],
+[data-testid="stToolbarActions"] [role="radio"],
+[data-testid="stToolbarActions"] label {{
+    display: none !important;
 }}
 
 /* ── Text selection ── */
