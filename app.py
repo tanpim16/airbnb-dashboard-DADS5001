@@ -72,9 +72,14 @@ st.markdown(
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* ตั้งค่า Font พื้นฐาน */
+/* ตั้งค่า Font พื้นฐานให้กับแอปทั้งหมด */
 html, body, [class*="css"], [class*="st-"] {{
     font-family: 'Inter', sans-serif !important;
+}}
+
+/* คืนค่า Font มาตรฐานให้กลุ่ม Icon เพื่อแก้ปัญหาข้อความ keyboard_double_ โผล่มาแทนไอคอน */
+.material-symbols-rounded, .material-icons, span[class*="material"], [data-testid="stIconMaterial"] {{
+    font-family: 'Material Symbols Rounded', 'Material Icons', sans-serif !important;
 }}
 
 /* ── Sidebar Style ── */
