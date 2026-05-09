@@ -130,6 +130,12 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
 
+/* ── Hide Streamlit toolbar (contrast_mode / dark_mode icons) ── */
+header[data-testid="stHeader"] {{ display: none !important; }}
+
+/* ── Fix sidebar collapse button (keyboard_double icon) ── */
+[data-testid="collapsedControl"] {{ display: none !important; }}
+
 /* ── Text selection ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
 </style>
