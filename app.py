@@ -129,6 +129,22 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
 
+/* ── Sidebar collapse button: hide long text, show arrow ── */
+[data-testid="collapsedControl"] {{
+    font-size: 0 !important;
+    min-height: 44px !important;
+    min-width: 28px !important;
+    background: rgba(254,89,95,0.07) !important;
+    border: 1px solid rgba(254,89,95,0.2) !important;
+    border-radius: 0 8px 8px 0 !important;
+}}
+[data-testid="collapsedControl"]::after {{
+    content: "›" !important;
+    font-size: 1.4rem !important;
+    color: {C_PRIMARY} !important;
+    line-height: 1 !important;
+}}
+
 /* ── Text selection ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
 </style>
