@@ -71,11 +71,12 @@ st.markdown(
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+/* ตั้งค่า Font พื้นฐาน */
 html, body, [class*="css"], [class*="st-"] {{
     font-family: 'Inter', sans-serif !important;
 }}
 
-/* ── Sidebar ── */
+/* ── Sidebar Style ── */
 [data-testid="stSidebar"] {{
     border-right: 1px solid rgba(254,89,95,0.12);
 }}
@@ -107,17 +108,16 @@ html, body, [class*="css"], [class*="st-"] {{
     line-height: 1.15;
 }}
 
-/* ── Divider ── */
+/* ── Divider & Table ── */
 hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; }}
 
-/* ── Dataframe ── */
 [data-testid="stDataFrameResizable"] {{
     border: 1px solid rgba(254,89,95,0.15) !important;
     border-radius: 12px !important;
     overflow: hidden;
 }}
 
-/* ── Chart border ── */
+/* ── Chart Container ── */
 .stPlotlyChart {{
     border: 1px solid rgba(254,89,95,0.1);
     border-radius: 14px;
@@ -129,38 +129,7 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
 
-/* ── Sidebar collapse button: hide ligature text, show › arrow ── */
-[data-testid="collapsedControl"] {{
-    position: relative !important;
-    overflow: visible !important;
-}}
-[data-testid="collapsedControl"] > * {{
-    visibility: hidden !important;
-}}
-[data-testid="collapsedControl"]::after {{
-    content: "›" !important;
-    visibility: visible !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    font-size: 1.5rem !important;
-    font-family: Arial, sans-serif !important;
-    color: {C_PRIMARY} !important;
-}}
-
-/* ── Hide contrast_mode / dark_mode text in toolbar buttons ── */
-[data-testid="stToolbarActions"] button span {{
-    visibility: hidden !important;
-}}
-/* ── Hide System/Light/Dark theme radio picker ── */
-[data-testid="stToolbarActions"] [role="radiogroup"],
-[data-testid="stToolbarActions"] [role="radio"],
-[data-testid="stToolbarActions"] label {{
-    display: none !important;
-}}
-
-/* ── Text selection ── */
+/* ── Selection Color ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
 </style>
 """,
