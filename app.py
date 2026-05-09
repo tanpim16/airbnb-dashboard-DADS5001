@@ -66,6 +66,7 @@ def apply_chart_style(fig, height=340):
 
 
 # ── Custom CSS ────────────────────────────────────────────────────────────────
+# แก้ไขโดย: นำส่วนที่พยายามเปลี่ยน icon ออก เพื่อแก้ไขคำว่า "keyboard_double_" หลุด
 st.markdown(
     f"""
 <style>
@@ -77,11 +78,13 @@ html, body, [class*="css"], [class*="st-"] {{
 }}
 
 /* ── Sidebar Style ── */
+/* ปรับสีเส้นขอบ Sidebar ให้เข้ากับ Theme */
 [data-testid="stSidebar"] {{
     border-right: 1px solid rgba(254,89,95,0.12);
 }}
 
 /* ── KPI Metric Cards ── */
+/* ปรับแต่งการ์ด KPI ให้สวยงาม (เก็บไว้เพราะยังทำงานได้ดี) */
 [data-testid="metric-container"] {{
     background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
     border: 1px solid rgba(254,89,95,0.18);
@@ -111,6 +114,7 @@ html, body, [class*="css"], [class*="st-"] {{
 /* ── Divider & Table ── */
 hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; }}
 
+/* ปรับขอบตาราง Dataframe */
 [data-testid="stDataFrameResizable"] {{
     border: 1px solid rgba(254,89,95,0.15) !important;
     border-radius: 12px !important;
@@ -118,6 +122,7 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 }}
 
 /* ── Chart Container ── */
+/* ปรับขอบกราฟ Plotly */
 .stPlotlyChart {{
     border: 1px solid rgba(254,89,95,0.1);
     border-radius: 14px;
@@ -131,6 +136,8 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 
 /* ── Selection Color ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
+
+/* (นำส่วน [data-testid="collapsedControl"] และ [data-testid="stToolbarActions"] ออกทั้งหมด) */
 </style>
 """,
     unsafe_allow_html=True,
