@@ -130,11 +130,16 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
 
-/* ── Hide Streamlit toolbar (contrast_mode / dark_mode icons) ── */
-header[data-testid="stHeader"] {{ display: none !important; }}
-
-/* ── Fix sidebar collapse button (keyboard_double icon) ── */
-[data-testid="collapsedControl"] {{ display: none !important; }}
+/* ── Fix icon text in toolbar (contrast_mode / dark_mode / keyboard_double) ── */
+/* Material Icons font not loading → hide ligature text, keep buttons clickable */
+header[data-testid="stHeader"] button span,
+header[data-testid="stHeader"] button p,
+[data-testid="stToolbarActions"] button span,
+[data-testid="stToolbarActions"] button p,
+[data-testid="collapsedControl"] span {{
+    font-size: 0 !important;
+    line-height: 0 !important;
+}}
 
 /* ── Text selection ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
