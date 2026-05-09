@@ -70,7 +70,6 @@ st.markdown(
     f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round');
 
 html, body, [class*="css"], [class*="st-"] {{
     font-family: 'Inter', sans-serif !important;
@@ -129,35 +128,6 @@ hr {{ border-color: rgba(254,89,95,0.12) !important; margin: 10px 0 !important; 
 
 /* ── Spinner ── */
 .stSpinner > div {{ border-top-color: {C_PRIMARY} !important; }}
-
-/* ── Fix icon text in header toolbar (contrast_mode / dark_mode) ── */
-header[data-testid="stHeader"] button span,
-header[data-testid="stHeader"] button p,
-[data-testid="stToolbarActions"] button span,
-[data-testid="stToolbarActions"] button p {{
-    font-size: 0 !important;
-    line-height: 0 !important;
-}}
-
-/* ── Sidebar collapse button - style as visible red tab ── */
-[data-testid="collapsedControl"] {{
-    background: #fff0f0 !important;
-    border: 1px solid rgba(254,89,95,0.3) !important;
-    border-left: none !important;
-    border-radius: 0 8px 8px 0 !important;
-    min-height: 48px !important;
-    padding: 0 6px !important;
-}}
-[data-testid="collapsedControl"] span {{
-    font-size: 0 !important;
-    line-height: 0 !important;
-}}
-[data-testid="collapsedControl"]::after {{
-    content: "▶" !important;
-    font-size: 12px !important;
-    color: #fe595f !important;
-    display: block !important;
-}}
 
 /* ── Text selection ── */
 ::selection {{ background: rgba(254,89,95,0.2); }}
